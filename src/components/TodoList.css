@@ -1,0 +1,28 @@
+@import './css-shared/variables.css';
+
+
+.container {
+  background-color: var(--white);
+  margin: auto;
+  max-width: 400px;
+  padding: 1em 2em;
+}
+
+.title {
+  text-transform: uppercase;
+}
+
+.form {
+  margin: 2em 0;
+}
+
+.addToDo {
+  padding: .5em;
+  margin: .5em;
+  background-color: var(--mainColor);
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+}

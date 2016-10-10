@@ -5,11 +5,7 @@
 @import './css-shared/typography.css';
 
 
-.title {
-  text-transform: uppercase;
-  font-size: 2rem;
-}
-
-.bar {
-  text-decoration: overline;
+.container {
+  margin: 2em auto;
+  height: 100vh;
 }

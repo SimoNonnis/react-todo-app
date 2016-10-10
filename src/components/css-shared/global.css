@@ -13,13 +13,6 @@ html {
   box-sizing: inherit;
 }
 
-@media (--tablet) {
-  html {
-    background-color: var(--mobileColor);
-  }
-}
-
-
 h1,
 h2,
 h3,

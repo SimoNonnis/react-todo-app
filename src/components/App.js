@@ -1,12 +1,20 @@
 import React from 'react';
 import CSSModules from 'react-css-modules';
-import styles from './app.css';
 
+import TodoList from './TodoList';
+
+import styles from './App.css';
+
+const dummyList = [
+  { id: 0, isDone: true,  text: 'make components' },
+  { id: 1, isDone: false, text: 'design actions' },
+  { id: 2, isDone: false, text: 'implement reducer' },
+  { id: 3, isDone: false, text: 'connect components' }
+];
 
 const App = () => (
-  <div>
-      <h1 className='global-css' styleName='title bar'>react-todo-app</h1>
-      <p>Let's start coding</p>
+  <div styleName='container'>
+      <TodoList todosList={dummyList} />
   </div>
 );
 

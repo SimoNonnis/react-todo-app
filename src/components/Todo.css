@@ -1,0 +1,5 @@
+@import './css-shared/variables.css';
+
+.container {
+  padding: .5em;
+}
