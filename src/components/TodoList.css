@@ -5,7 +5,7 @@
   background-color: var(--white);
   margin: auto;
   max-width: 400px;
-  padding: 1em 2em;
+  padding: 2em;
 }
 
 .title {
@@ -25,4 +25,5 @@
 .list {
   margin: 0;
   padding: 0;
+  padding-left: .5em;
 }
