@@ -8,7 +8,10 @@ import styles from './App.css';
 class App extends Component {
   constructor () {
     super();
+
     this.addToDo = this.addToDo.bind(this);
+    this.toggleToDo = this.toggleToDo.bind(this);
+
     this.state = {
       data: [
         { id: 0, isDone: true,  text: 'make components' },
@@ -25,10 +28,18 @@ class App extends Component {
     })
   }
 
+  toggleToDo (todo) {
+    console.log('Cliked' + todo);
+  }
+
   render () {
     return (
       <div styleName='container'>
-          <TodoList todosList={this.state.data} addToDo={this.addToDo}/>
+          <TodoList
+            todosList={this.state.data}
+            addToDo={this.addToDo}
+            toggleToDo={this.toggleToDo}
+          />
       </div>
     )
   }

@@ -19,6 +19,10 @@ class TodoList extends Component {
     this.addToDoForm.reset();
   }
 
+  handleClick (e) {
+    this.props.toggleToDo(e)
+  }
+
   render () {
     return (
       <div styleName='container'>
@@ -28,7 +32,14 @@ class TodoList extends Component {
           <button styleName='addToDo' type='submit'>+ Add</button>
         </form>
         <ul styleName='list'>
-          {this.props.todosList.map(t => <Todo key={t.id} isDone={t.isDone} text={t.text}/>)}
+          {this.props.todosList.map(t => (
+            <Todo
+              key={t.id}
+              isDone={t.isDone}
+              text={t.text}
+              handleClick={this.handleClick.bind(this)}
+            />
+          ))}
         </ul>
       </div>
     )
@@ -51,7 +62,8 @@ class TodoList extends Component {
 
 TodoList.propTypes = {
   todosList: PropTypes.array,
-  addToDo: PropTypes.func
+  addToDo: PropTypes.func,
+  toggleToDo: PropTypes.func
 }
 
 export default CSSModules(TodoList, styles, {allowMultiple: true});
