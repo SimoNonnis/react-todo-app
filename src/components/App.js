@@ -40,12 +40,7 @@ class App extends Component {
   }
 
   deleteToDo (todoId) {
-    let { data } = this.state;
-    data.map((t,i) => {
-      if (todoId == t.id) {
-        console.log('hi' + i);
-      }
-    })
+    console.log('hi', todoId);
   }
 
   render () {

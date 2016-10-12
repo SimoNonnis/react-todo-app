@@ -4,15 +4,20 @@ import CSSModules from 'react-css-modules';
 import styles from './Todo.css';
 
 const Todo = ({isDone, text, handleClick, handleDelete, id}) => {
-  const notDone = <li id={id}>{text}</li>;
+  const notDone = <li id={id} onClick={handleClick} >{text}</li>;
   const done = (
     <span>
-      <strike styleName='completedToDo' id={id}>{text}</strike>
+      <strike
+        styleName='completedToDo'
+        onClick={handleClick}
+        id={id}>
+          {text}
+      </strike>
       <span styleName='deleteToDo' id={id} onClick={handleDelete}>Delete</span>
     </span>);
 
   return (
-    <div styleName='container' onClick={handleClick}>
+    <div styleName='container'>
       {isDone ? done : notDone}
     </div>
   )
