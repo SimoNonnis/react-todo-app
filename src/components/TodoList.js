@@ -9,14 +9,18 @@ class TodoList extends Component {
   createToDo (e) {
     e.preventDefault();
     const uid = () => Math.random().toString(34).slice(2);
+    const text = this.getInput.value;
+    const isLongEnough = text.length > 3;
 
-    const todo = {
-      id: uid(),
-      isDone: false,
-      text: this.getInput.value
+    if (isLongEnough) {
+      const todo = {
+        id: uid(),
+        isDone: false,
+        text: text
+      }
+      this.props.addToDo(todo);
+      this.addToDoForm.reset();
     }
-    this.props.addToDo(todo);
-    this.addToDoForm.reset();
   }
 
   handleClick (e) {
