@@ -3,9 +3,9 @@ import CSSModules from 'react-css-modules';
 
 import styles from './Todo.css';
 
-const Todo = ({isDone, text, handleClick}) => {
-  const notDone = <li>{text}</li>;
-  const done = <strike>{text}</strike>;
+const Todo = ({isDone, text, handleClick, id}) => {
+  const notDone = <li id={id}>{text}</li>;
+  const done = <strike id={id}>{text}</strike>;
 
   return (
     <div styleName='container' onClick={handleClick}>
@@ -17,7 +17,8 @@ const Todo = ({isDone, text, handleClick}) => {
 Todo.propTypes = {
   isDone: PropTypes.bool,
   text: PropTypes.string,
-  handleClick: PropTypes.func
+  handleClick: PropTypes.func,
+  id: PropTypes.string
 }
 
 export default CSSModules(Todo, styles, {allowMultiple: true});

@@ -20,7 +20,8 @@ class TodoList extends Component {
   }
 
   handleClick (e) {
-    this.props.toggleToDo(e)
+    const todoId = e.target.id;
+    this.props.toggleToDo(todoId);
   }
 
   render () {
@@ -38,6 +39,7 @@ class TodoList extends Component {
               isDone={t.isDone}
               text={t.text}
               handleClick={this.handleClick.bind(this)}
+              id={t.id}
             />
           ))}
         </ul>

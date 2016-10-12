@@ -14,10 +14,10 @@ class App extends Component {
 
     this.state = {
       data: [
-        { id: 0, isDone: true,  text: 'make components' },
-        { id: 1, isDone: false, text: 'design actions' },
-        { id: 2, isDone: false, text: 'implement reducer' },
-        { id: 3, isDone: false, text: 'connect components' }
+        { id: '0', isDone: true,  text: 'make components' },
+        { id: '1', isDone: false, text: 'design actions' },
+        { id: '2', isDone: false, text: 'implement reducer' },
+        { id: '3', isDone: false, text: 'connect components' }
       ]
     }
   }
@@ -28,8 +28,14 @@ class App extends Component {
     })
   }
 
-  toggleToDo (todo) {
-    console.log('Cliked' + todo);
+  toggleToDo (todoId) {
+    const { data } = this.state;
+    this.state.data.map((t, i) => {
+      if (todoId == t.id) {
+        data[i].isDone = !data[i].isDone
+        this.setState({data})
+      }
+    })
   }
 
   render () {
