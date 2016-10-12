@@ -1,2 +1,2 @@
 # react-todo-app
-A Todo App Using React, Redux, and Immutable.js
+A Todo App Using React and css-modules

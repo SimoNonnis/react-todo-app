@@ -6,6 +6,8 @@
   margin: auto;
   max-width: 400px;
   padding: 2em;
+  border-radius: 3px;
+  box-shadow: 1px 1px 3px #a0a0a0;
 }
 
 .title {
@@ -16,8 +18,13 @@
   margin: 2em 0;
 }
 
-.addToDo {
+.input {
   padding: .5em;
+  outline: none;
+}
+
+.addToDo {
+  padding: .6em;
   margin: .5em;
   background-color: var(--mainColor);
 }

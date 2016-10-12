@@ -38,7 +38,12 @@ class TodoList extends Component {
       <div styleName='container'>
         <h1 styleName='title'>Today's To Do List</h1>
         <form styleName='form' ref={input => this.addToDoForm = input} onSubmit={this.createToDo.bind(this)}>
-          <input ref={input => this.getInput = input} type='text' placeholder='add ToDo'/>
+          <input
+            ref={input => this.getInput = input}
+            type='text'
+            placeholder='add ToDo'
+            styleName='input'
+          />
           <button styleName='addToDo' type='submit'>+ Add</button>
         </form>
         <ul styleName='list'>
