@@ -11,6 +11,7 @@ class App extends Component {
 
     this.addToDo = this.addToDo.bind(this);
     this.toggleToDo = this.toggleToDo.bind(this);
+    this.deleteToDo = this.deleteToDo.bind(this);
 
     this.state = {
       data: [
@@ -30,10 +31,19 @@ class App extends Component {
 
   toggleToDo (todoId) {
     const { data } = this.state;
-    this.state.data.map((t, i) => {
+    data.map((t, i) => {
       if (todoId == t.id) {
         data[i].isDone = !data[i].isDone
         this.setState({data})
+      }
+    })
+  }
+
+  deleteToDo (todoId) {
+    let { data } = this.state;
+    data.map((t,i) => {
+      if (todoId == t.id) {
+        console.log('hi' + i);
       }
     })
   }
@@ -45,6 +55,7 @@ class App extends Component {
             todosList={this.state.data}
             addToDo={this.addToDo}
             toggleToDo={this.toggleToDo}
+            deleteToDo={this.deleteToDo}
           />
       </div>
     )

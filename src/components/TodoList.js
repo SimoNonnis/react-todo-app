@@ -28,6 +28,11 @@ class TodoList extends Component {
     this.props.toggleToDo(todoId);
   }
 
+  handleDelete (e) {
+    const todoId = e.target.id;
+    this.props.deleteToDo(todoId);
+  }
+
   render () {
     return (
       <div styleName='container'>
@@ -43,6 +48,7 @@ class TodoList extends Component {
               isDone={t.isDone}
               text={t.text}
               handleClick={this.handleClick.bind(this)}
+              handleDelete={this.handleDelete.bind(this)}
               id={t.id}
             />
           ))}
@@ -69,7 +75,8 @@ class TodoList extends Component {
 TodoList.propTypes = {
   todosList: PropTypes.array,
   addToDo: PropTypes.func,
-  toggleToDo: PropTypes.func
+  toggleToDo: PropTypes.func,
+  deleteToDo: PropTypes.func
 }
 
 export default CSSModules(TodoList, styles, {allowMultiple: true});
